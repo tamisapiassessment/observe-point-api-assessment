@@ -22,7 +22,7 @@ public class GetBooksId {
 
             Assert.assertEquals(response.getStatusCode(), 200);
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_PositiveTest200_VerifyValidID method. /n" + e.toString());
             throw e;
         }
     }
@@ -35,7 +35,7 @@ public class GetBooksId {
             request.pathParam("ID",invalidBookID);
             request.spec(request).get(EndPoint.GET_BOOKS_PATH_PARAM).then().statusCode(404);
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_NegativeTest404_VerifyInvalidID method. /n" + e.toString());
             throw e;
         }
     }
@@ -49,7 +49,7 @@ public class GetBooksId {
             Response response = request.get(url+invalidBookID);
             Assert.assertEquals(response.getStatusCode(), 400);
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_NegativeTest400_VerifyNullID method. /n" + e.toString());
             throw e;
         }
     }
@@ -65,7 +65,7 @@ public class GetBooksId {
 
             response.then().assertThat().body("ID", Is.is(expectedResult));
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_VerifyResponseBody_ID method. /n" + e.toString());
             throw e;
         }
     }
@@ -81,7 +81,7 @@ public class GetBooksId {
 
             response.then().assertThat().body("Title", Is.is(expectedResult));
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_VerifyResponseBody_Title method. /n" + e.toString());
             throw e;
         }
     }
@@ -97,7 +97,7 @@ public class GetBooksId {
 
             response.then().assertThat().body("Description", containsString(expectedResult));
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_VerifyResponseBody_Description method. /n" + e.toString());
             throw e;
         }
     }
@@ -113,7 +113,7 @@ public class GetBooksId {
 
             response.then().assertThat().body("PageCount", Is.is(expectedResult));
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_VerifyResponseBody_PageCount method. /n" + e.toString());
             throw e;
         }
     }
@@ -129,7 +129,7 @@ public class GetBooksId {
 
             response.then().assertThat().body("Excerpt", containsString(expectedResult));
         } catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_VerifyResponseBody_Excerpt method. /n" + e.toString());
             throw e;
         }
     }
@@ -144,7 +144,7 @@ public class GetBooksId {
             Response response = request.spec(request).get(EndPoint.GET_BOOKS_PATH_PARAM);
             response.then().assertThat().time(lessThan(elapsedTime));
         }catch (Exception e) {
-
+            System.out.println("Failed during getBookByID_Performance method. /n" + e.toString());
             throw e;
         }
     }
