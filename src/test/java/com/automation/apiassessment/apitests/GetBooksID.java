@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.lessThan;
 
 public class GetBooksId {
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_PositiveTest200_VerifyValidID() {
         final String bookID = "1";
         try {
@@ -27,7 +27,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_NegativeTest404_VerifyInvalidID(){
         final String invalidBookID = "100000";
         try {
@@ -40,7 +40,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_NegativeTest400_VerifyNullID() {
         final String invalidBookID = null;
         String url = "https://fakerestapi.azurewebsites.net/api/Books/";
@@ -54,7 +54,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_VerifyResponseBody_ID(){
         final int queryValue = 1;
         final int expectedResult = 1;
@@ -70,7 +70,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_VerifyResponseBody_Title(){
         final int queryValue = 1;
         final String expectedResult = "Book 1";
@@ -86,7 +86,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_VerifyResponseBody_Description(){
         final int queryValue = 1;
         final String expectedResult = "Lorem lorem lorem. Lorem lorem lorem. Lorem lorem lorem.";
@@ -102,7 +102,7 @@ public class GetBooksId {
         }
     }
 
-    @Test//(groups = "apiassessment")
+    @Test(groups = "apiassessment")
     public void getBookByID_VerifyResponseBody_PageCount(){
         final int queryValue = 1;
         final int expectedResult = 100;
@@ -118,7 +118,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_VerifyResponseBody_Excerpt() {
         final int queryValue = 1;
         final String expectedResult = "Lorem lorem lorem.";
@@ -134,7 +134,7 @@ public class GetBooksId {
         }
     }
 
-    @Test
+    @Test(groups = "apiassessment")
     public void getBookByID_Performance(){
         final String bookID = "1";
         final Long elapsedTime = 3000L;  //obviously this value would need to be set to something more appropriate but to make sure the test passed I set it high.
