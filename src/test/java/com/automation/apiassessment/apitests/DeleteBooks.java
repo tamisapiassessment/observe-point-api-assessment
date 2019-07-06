@@ -60,6 +60,6 @@ public class DeleteBooks {
 
     @Test
     public void scenarioTest_PositiveTest_VerifyBookIsDeleted() {
-        //ToDo: If the API were not fake I would add a test into a separate class for Scenario Tests to verify the book was deleted
+        //ToDo: If the API were not fake I would add a test into a seperate class for Scenario Tests to verify the book was deleted
     }
 }
